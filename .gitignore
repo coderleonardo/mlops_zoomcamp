@@ -162,3 +162,8 @@ cython_debug/
 #.idea/
 
 00_mlops-zoomcamp-main/
+*/mlruns/
+*.db
+*/workspace/
+mlops-zoomcamp/
+06_best_practices/code
