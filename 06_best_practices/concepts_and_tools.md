@@ -43,11 +43,74 @@ isort your_script.py
 ```
 
 ## Git pre-commit hooks
+[Pre-commit hooks](https://pre-commit.com/) are scripts that run automatically before a commit is made. They help enforce code quality and catch issues early in the development process.
+
+Example:
+```bash
+pre-commit install
+pre-commit run --all-files
+```
 
 ## Makefiles
+[Makefiles](https://www.gnu.org/software/make/manual/make.html) are used to define a set of tasks to be executed. They are commonly used to automate workflows such as building, testing, and deploying code.
+
+Example:
+```makefile
+test:
+    pytest tests/
+
+format:
+    black . && isort .
+```
+Run a specific task:
+```bash
+make test
+```
 
 ## Staging and production environments
+Staging and production environments are separate setups used to test and deploy applications. Staging mimics production to catch issues before deployment, while production is the live environment.
+
+Example:
+```bash
+# Deploy to staging
+kubectl apply -f staging-deployment.yaml
+
+# Deploy to production
+kubectl apply -f production-deployment.yaml
+```
 
 ## Infrastructure as Code
+[Infrastructure as Code (IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code) involves managing and provisioning infrastructure using code. Tools like Terraform and AWS CloudFormation are commonly used for this purpose.
+
+Example with Terraform:
+```bash
+terraform init
+terraform apply
+```
 
 ## CI/CD and GitHub Actions
+[GitHub Actions](https://github.com/features/actions) is a CI/CD platform that automates workflows directly from your GitHub repository. It can be used to build, test, and deploy applications.
+
+Example workflow file (`.github/workflows/ci.yml`):
+```yaml
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+```
