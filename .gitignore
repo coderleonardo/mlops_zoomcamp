@@ -161,9 +161,12 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-00_mlops-zoomcamp-main/
+*-mlops-zoomcamp-main/
 */mlruns/
+04_deployment/web-service-mlflow/mlruns/
+02_experiment_tracking/running_mlflow_scenarios_examples/artifacts_local/
 *.db
 */workspace/
-mlops-zoomcamp/
+*mlops-zoomcamp*/
 06_best_practices/code
+*/mage/
